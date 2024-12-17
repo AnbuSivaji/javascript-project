@@ -9,6 +9,9 @@ body {
 }
 
 .calculator {
+    background-image: url(calculator\ image.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -36,7 +39,7 @@ body {
 button {
     font-size: 20px;
     padding: 20px;
-    background-color: #f1f1f1;
+    background-color:azure;
     border: none;
     border-radius: 5px;
     cursor: pointer;
