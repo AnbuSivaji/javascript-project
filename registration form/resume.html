@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <style>
+        /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.resume-display {
+    display: none;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Creator</h1>
+        <form id="resumeForm">
+            <label>Your Name:</label>
+            <input type="text" id="name" placeholder="Your Name" required>
+
+            <label>Title/Sub Heading:</label>
+            <input type="text" id="title" placeholder="Title/Sub Heading" required>
+
+            <label>Objective:</label>
+            <textarea id="objective" placeholder="Objective" required></textarea>
+
+            <label>Skills:</label>
+            <textarea id="skills" placeholder="Skills"></textarea>
+
+            <label>Academic Details:</label>
+            <textarea id="academics" placeholder="Academic Details"></textarea>
+
+            <label>Contact:</label>
+            <textarea id="contact" placeholder="Contact"></textarea>
+
+            <button type="button" onclick="generateResume()">Generate Resume</button>
+        </form>
+
+        <div id="resumeOutput" class="resume-display">
+            <button onclick="printResume()">Print Resume</button>
+        </div>
+    </div>
+
+    <script>
+// script.js
+function generateResume() {
+    const name = document.getElementById('name').value;
+    const title = document.getElementById('title').value;
+    const objective = document.getElementById('objective').value;
+    const skills = document.getElementById('skills').value;
+    const academics = document.getElementById('academics').value;
+    const contact = document.getElementById('contact').value;
+
+    const resumeOutput = document.getElementById('resumeOutput');
+    resumeOutput.style.display = 'block';
+    resumeOutput.innerHTML = `
+        <h2>${name}</h2>
+        <h3>${title}</h3>
+        <p><strong>Objective:</strong> ${objective}</p>
+        <p><strong>Skills:</strong> ${skills}</p>
+        <p><strong>Academic Details:</strong> ${academics}</p>
+        <p><strong>Contact:</strong> ${contact}</p>
+        <button onclick="printResume()">Print Resume</button>
+    `;
+}
+
+function printResume() {
+    const resumeContent = document.getElementById('resumeOutput').innerHTML;
+    const originalContent = document.body.innerHTML;
+
+    document.body.innerHTML = resumeContent;
+    window.print();
+    document.body.innerHTML = originalContent;
+}
+
+    </script>
+</body>
+</html>

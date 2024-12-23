@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Student Registration Form</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            display: flex;
+            width: 700px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .general-info, .contact-details {
+            padding: 20px;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        .general-info {
+            background-color: #f7f9fc;
+        }
+        .contact-details {
+            background-color: #0b93e7;
+            color: #fff;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .contact-details input, .contact-details select {
+            background-color: #fff;
+            color: #000;
+        }
+        .terms {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .terms input {
+            width: auto;
+            margin-right: 10px;
+        }
+        .register-btn {
+            margin-top: 20px;
+            background-color: #14dc46;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        .register-btn:hover {
+            background-color: #0056b3;
+        }
+        a {
+            color: #fff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <!-- General Information -->
+        <div class="general-info">
+            <h2>Student Information</h2>
+            <form id="registrationForm" onsubmit="return validateForm()">
+                <label for="title">Title</label>
+                <select id="title" required>
+                    <option value="">Select Title</option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Ms.">Ms.</option>
+                    <option value="Mrs.">Mrs.</option>
+                </select>
+
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" placeholder="Enter first name" required>
+
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" placeholder="Enter last name" required>
+
+                <label for="branch">Branch</label>
+                <select id="branch" required>
+                    <option value="">Select Branch</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Electronics & Communication">Electronics & Communication</option>
+                </select>
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" placeholder="Enter subject" required>
+
+                <label for="position">Position</label>
+                <input type="text" id="position" placeholder="e.g., Student" required>
+
+                <label for="employees">College</label>
+                <input type="text" id="employees" placeholder="Enter College Name">
+            </form>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="contact-details">
+            <h2>Contact Details</h2>
+            <label for="street">Address</label>
+            <input type="text" id="street" placeholder="Street and Number" required>
+
+            <label for="additionalInfo">Additional Information</label>
+            <input type="text" id="additionalInfo" placeholder="Any additional details">
+
+            <label for="zipCode">Pin Code</label>
+            <input type="text" id="zipCode" placeholder="e.g., 123456" required>
+
+            <label for="place">Place</label>
+            <input type="text" id="place" placeholder="City" required>
+
+            <label for="country">Country</label>
+            <input type="text" id="country" placeholder="Country" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" placeholder="e.g., 9876543210" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" placeholder="example@mail.com" required>
+
+            <div class="terms">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I accept the <a href="#">Terms and Conditions</a></label>
+            </div>
+
+            <button type="submit" class="register-btn" onclick="validateForm()">Register</button>
+        </div>
+    </div>
+
+    <!-- JavaScript Validation -->
+    <script>
+        function validateForm() {
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const zipCode = document.getElementById('zipCode').value.trim();
+            const terms = document.getElementById('terms').checked;
+
+            // First and Last Name Validation
+            if (firstName === '' || lastName === '') {
+                alert('First Name and Last Name are required.');
+                return false;
+            }
+
+            // Phone Number Validation (10 digits)
+            const phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(phone)) {
+                alert('Please enter a valid 10-digit phone number.');
+                return false;
+            }
+
+            // Email Validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            // Zip Code Validation (6 digits)
+            const zipPattern = /^[0-9]{6}$/;
+            if (!zipPattern.test(zipCode)) {
+                alert('Please enter a valid 6-digit Zip Code.');
+                return false;
+            }
+
+            // Terms Validation
+            if (!terms) {
+                alert('You must accept the Terms and Conditions.');
+                return false;
+            }
+
+            alert('Form submitted successfully!');
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 8px 0;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Registration Form</h2>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <div id="nameError" class="error"></div>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+
+        <div id="emailError" class="error"></div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <div id="dobError" class="error"></div>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <div id="genderError" class="error"></div>
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="Male"> Male
+        <input type="radio" id="female" name="gender" value="Female"> Female
+
+        <div id="courseError" class="error"></div>
+        <label for="course">Course:</label>
+        <select id="course" name="course" required>
+            <option value="">Select a course</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Business Administration">Business Administration</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+        </select>
+
+        <div id="phoneError" class="error"></div>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <button type="submit" class="btn">Register</button>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        let valid = true;
+
+        // Reset error messages
+        document.getElementById('nameError').innerText = '';
+        document.getElementById('emailError').innerText = '';
+        document.getElementById('dobError').innerText = '';
+        document.getElementById('genderError').innerText = '';
+        document.getElementById('courseError').innerText = '';
+        document.getElementById('phoneError').innerText = '';
+
+        // Validate Name
+        const fullName = document.getElementById('fullName').value;
+        if (fullName === '') {
+            document.getElementById('nameError').innerText = 'Name is required.';
+            valid = false;
+        }
+
+        // Validate Email
+        const email = document.getElementById('email').value;
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (email === '' || !emailPattern.test(email)) {
+            document.getElementById('emailError').innerText = 'Please enter a valid email address.';
+            valid = false;
+        }
+
+        // Validate Date of Birth
+        const dob = document.getElementById('dob').value;
+        if (dob === '') {
+            document.getElementById('dobError').innerText = 'Date of birth is required.';
+            valid = false;
+        }
+
+        // Validate Gender
+        const gender = document.querySelector('input[name="gender"]:checked');
+        if (!gender) {
+            document.getElementById('genderError').innerText = 'Please select your gender.';
+            valid = false;
+        }
+
+        // Validate Course
+        const course = document.getElementById('course').value;
+        if (course === '') {
+            document.getElementById('courseError').innerText = 'Please select a course.';
+            valid = false;
+        }
+
+        // Validate Phone Number
+        const phone = document.getElementById('phone').value;
+        const phonePattern = /^[0-9]{10}$/;
+        if (phone === '' || !phonePattern.test(phone)) {
+            document.getElementById('phoneError').innerText = 'Please enter a valid 10-digit phone number.';
+            valid = false;
+        }
+
+        return valid;
+    }
+</script>
+
+</body>
+</html>

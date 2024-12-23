@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body
+    style="
+      background-image: url(bacgr.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    "
+  >
+    <h1 style="color: white">
+      <center>Please use the navigation buttons move the car</center>
+    </h1>
+    <br /><br />
+    <form>
+      <center>
+        <input type="button" value="Start" onclick="Start()" />
+        <input type="button" value="Stop" onclick="Stop()" />
+        <input type="button" value="Reverse" onclick="Reverse()" />
+        <input type="button" value="Restart" onclick="init()" />
+      </center>
+      <br /><br /><br /><br /><br /><br /><br /><br />
+      <img
+        src="car.jpg"alt="Car"  id="myImage" style="mix-blend-mode: darken"
+      />
+    </form>
+    <script>
+      var animation;
+      function init() {
+        img = document.getElementById("myImage");
+        img.style.position = "absolute";
+        img.style.left = "0px";
+      }
+      window.onload = init;
+      function Start() {
+        img.style.left = parseInt(img.style.left) + 10 +'px';
+        animation = setTimeout(Start, 50);
+      }
+      function Stop() {
+        clearTimeout(animation);
+        img.style.left = 'paused';
+      }
+      function Reverse() {
+        img.style.left = parseInt(img.style.left) + -10 +'px';
+        animation = setTimeout(Reverse, 50);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football club</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+     body{
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: white;
+     }
+     #home {
+            background-image: url(image2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+    .container {
+        display: flex;
+        width: 100%;
+    }
+
+    .navbar {
+        width: 100%;
+        position: fixed;
+        background-color: pink;  /* Or transparent if you want no background */
+        padding: 10px 0;  /* Adjust padding to control navbar height */
+        height: 60px;  /* Set a standard height for the navbar */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;  /* Vertically center the content */
+    }
+
+    .navbar ul {
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    .navbar ul li a {
+        font-weight: bold;
+        text-decoration: none;
+        transition: 1.5s;
+        margin-bottom: 10px;
+        box-shadow: 0px 10px 15px black;
+        border-radius: 10px;
+        padding: 10px 15px;
+    }
+
+    .navbar ul li a:hover {
+        transform: scale(1.5);
+        background-color: gray;
+    }
+
+    .navbar ul li:first-child a {
+        background: blue;
+        color: white;
+    }
+
+    .navbar ul li:last-child a {
+        background: red;
+        color: white;
+        transform: scale(1.0);
+        border-radius: 5px 10px;
+    }
+
+    #about {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 20px;
+        margin-top: 0;
+        background-image: url(image.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #about .text {
+        flex: 1;
+        padding-right: 20px;
+    }
+
+    #about img {
+        max-width: 45%;
+        height: auto;
+        border-radius: 10px;
+        margin: 10px;
+    }
+
+    .model {
+        text-align: right;
+        padding: 50px 20px;
+        background-size: cover;
+        background-position: center;
+        color: #ffffff;
+        background-position: fixed;
+    }
+
+    .model h1 {
+        font-size: 3em;
+    }
+
+    .cta-buttons .btn {
+        margin: 10px;
+        padding: 10px 20px;
+        background-color: #ef233c;
+        color: whitesmoke;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .btn:hover {
+        background-color: blue;
+    }
+
+    .btn:active {
+        background-color: yellow;
+    }
+
+    section {
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    #about, #membership, #events, #contact {
+        background-color: #f4f4f4;
+        margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+    <div class="Container">
+       <div class="navbar">
+        <div >
+        <img src="icon.jpeg" alt="Football image" style="width: 50px;height: 50px; margin: 20px;">
+        </div>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#membership">Membership</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#contact us">Contact us</a></li>
+            <li><a href="#pages">Pages</a></li>
+            <li><a href="#">Member login</a></li>
+         </ul>
+      </div>
+  </div>
+
+      <section class="model" id="home">
+        <h1>Welcome To the club</h1>
+        <p>Football Club is Modern</p>
+        <div class="cta-buttons">
+          <a href="#about" class="btn">Our story</a>
+          <a href="#membership" class="btn">Become a Member</a>
+        </div>
+            <div class="B1">
+    <iframe  width="100%" height="100%" src="https://www.youtube.com/embed/ly36kn0ug4k" frameborder="0">Video</iframe>
+  </div>
+  
+      </section>
+      
+    <section id="about">
+      <div class="about_tag">
+            <h2 class="about_h2">About Us</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, molestias! Perferendis debitis, eius excepturi quod incidunt, aspernatur deleniti aliquid laboriosam molestias quam in praesentium exercitationem et distinctio dolorum voluptatibus magnam.</p>
+      </div>
+      <div class="about_img">
+              <img src="ronaldo.jpg" alt="">
+              <img src="meesi.jpg" alt="">
+      </div>
+    </section>
+    
+    <section id="membership">
+       <h2>Become a Member</h2>
+       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia quam blanditiis aut, deserunt impedit ducimus corporis porro fuga, labore distinctio ipsam. Repudiandae accusantium nulla maiores odit tempora animi labore rerum!</p>
+    </section>
+
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam natus quod magni. Excepturi architecto nisi, magnam omnis necessitatibus tenetur harum eum porro laborum laboriosam deleniti. Aperiam in autem similique beatae.</p>
+    </section>
+
+    <section id="contact us">
+      <h2>Contact us</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis voluptatem quasi dolores praesentium voluptas nihil recusandae quae, maiores explicabo doloremque unde quidem corrupti quas! Fuga eius nisi ex aperiam architecto.</p>
+    </section>
+</body>
+</html>
