@@ -12,21 +12,19 @@
       padding: 0;
       height: 100%;
       background-color: white;
+      
      }
      #home {
             background-image: url(image2.jpg);
             background-repeat: no-repeat;
             background-size: cover;
-            background-attachment: fixed;
             color: white;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-          
-        }
-
+           }
     .container{
     display: flex;
      width: 100%;
@@ -40,11 +38,13 @@
       display:flex;
       justify-content: space-between;
       align-items: center;
-  
+      margin-right: 30px;
+    
+         
        }
 
      #about{
-      display:flex;
+      
       justify-content: space-between;
       align-items:center;
       padding: 50px 20px;
@@ -52,17 +52,22 @@
       background-image: url(image.jpg);
       background-repeat: no-repeat;
       background-size: cover;
-      .about_img{
+      height: 100%;
+      
+      .about_img
+      {
         display: flex;
-        width:700px ;
-        height: 250px;
+        float: right;
+        text-align: center;
       }
-      .about_h2{
-        position: relative;
-        bottom: 100px;
-      }
+
       
       
+      
+      
+}
+ul{
+  margin-right: 20px;
 }
        #about .text{
         flex: 1;
@@ -70,33 +75,53 @@
        }
        
   #about img{
-    max-width: 45%;
+    max-width: 80%;
     height: auto;
     border-radius: 10px;
     margin: 10px;
- 
+    
+    
+    
+ }
+ #about .about_img .img_item{
   
-  }
+  
+  display: flex;
+ }
+ #about .about_img .img_item img{
+  transition: transform 0.3s ease;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  
+ }
+ #about .about_img .img_item:hover img{
+  transform: scale(1.2);
+  
+ }
+
   .navbar ,ul,li{
      display: flex;
      list-style: none;
-     padding: 10px;
+     padding: 1px;
      text-transform: uppercase;
      top: 0;
      justify-content: space-between;
+     margin-left: 15px;
      
     }
   
     .navbar ul li a{
       font-weight: bold;
       text-decoration: none;
-      transition: 1.5s;
+      transition: 0.5s;
       margin-bottom: 10px;
       box-shadow: 0px 10px 15px black;
       border-radius: 10px;
+      padding: 10px;
    }
     .navbar ul li a:hover{
-      transform:scale(1.5);
+      transform:scale(1.2);
       background-color:gray;
       }
       .B1{
@@ -105,6 +130,7 @@
         height:400px;
         width: 500px;
         display: flex;
+        border: 10px;
       }
       .navbar ul li:first-child a{
         background: blue;
@@ -154,6 +180,76 @@
       background-color: #f4f4f4;
       margin: 20px 0;
     }
+    table{
+      border-collapse:collapse ;
+      margin-top: 100px;
+    }
+    th{
+      background-color: black;
+      color: white;
+    }
+    th ,td{
+      padding: 10px;
+      vertical-align: middle;
+      
+    }
+    td img{
+      width: 20px;
+      height: 20px;
+      mix-blend-mode: darken;
+    }
+    tr:nth-child(even){
+      background-color: bisque;
+    }
+    
+    
+   #membership{
+    display:flex;
+    width: auto;
+    font-size: 16px;
+   }
+   
+   
+   .type1 input,.type1 textarea{
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size:16px; 
+    border-radius: 10px ;
+   }
+   .type1 button{
+    padding: 10px;
+    background-color: red;
+    color: white;
+    font-size:16px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition:0ms;
+    border-radius: 10px;
+   }
+   .type1 button:hover {
+    background-color: blue;
+}
+.type1 button:active{
+  background-color: yellow;
+}
+
+.image_1{
+  display:block;
+  margin-top:500px;
+  width: 100%;
+  
+  text-align: center;
+  
+}
+.image_1 img{
+  width: 100%;
+  max-height: 500px;
+  border-radius: 10px;
+  
+
+}
+
   
   </style>
 
@@ -164,7 +260,9 @@
         <div class="demo">
                 <img src="icon.jpeg" alt="Footbal image" style="width: 50px;height: 50px; margin: 20px; mix-blend-mode: darken;">
         </div>
+        
           <ul >
+    
             <li ><a href="#home">Home</a> </li>
             <li><a href="#about">About</a> </li>
             <li><a href="#membership">Membership</a> </li>
@@ -174,6 +272,7 @@
             <li ><a href="#"> Member login</a></li>
          </ul>
       </div>
+      
   </div>
 
       <section class="model" id="home">
@@ -189,22 +288,97 @@
   
       </section>
       
-    <section id="about">
+    <section id="about" >
+      
       <div class="about_tag">
-            <h2 class=about_h2>About Us</h2>
+            <h2  class=about_h2>About Us</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, molestias! Perferendis debitis, eius excepturi quod incidunt, aspernatur deleniti aliquid laboriosam molestias quam in praesentium exercitationem et distinctio dolorum voluptatibus magnam.</p>
       </div>
       <div class="about_img">
-              <img src="ronaldo.jpg" alt="">
-              <img src="meesi.jpg" alt="">
-              </div>
+           <div class="img_item">
+            <img src="ronaldo.jpg" alt="Ronaldo">
+             <div class="overlay">
+              <ul>
+            <li> <a href="https://x.com/Cristiano?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fa-brands fa-twitter fa-xl"></i></a></li>
+            <li><a href="https://www.instagram.com/cristiano/"><i class="fa-brands fa-instagram fa-xl"></i></a></li>
+              </ul>
+             </div>
+           </div> 
+        <div class="img_item">
+            <img src="meesi.jpg" alt="Messi">
+            </div>
+            <div class="overlay">
+              <ul>
+            <li> <a href="https://www.facebook.com/leomessi/"><i class="fa-brands fa-facebook fa-xl"></i></a></li>
+            <li> <a href="https://x.com/teammessi?lang=en"> <i class="fa-brands fa-twitter fa-xl"></i></a></li>
+              </ul>
+        </div>
+      </div>
+      <div class="image_1">
+        <img src="kick football.jpg" alt="">
+      </div>
     </section>
     
     <section id="membership">
-   <h2>Become a Member</h2>
-   <p>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia quam blanditiis aut, deserunt impedit ducimus corporis porro fuga, labore distinctio ipsam. Repudiandae accusantium nulla maiores odit tempora animi labore rerum!
-   </p>
+      <h2>Become a Member</h2>
+   <h4 style="font-size:larger;" >Membership Fees</h4>
+ <div class="type">
+   <table border="1">
+    <tr>
+      <th >Yearly Access</th>
+      <th>T1 $420</th>
+      <th> T2 $640</th>
+      <th>T3 $860</th>
+    </tr>
+    <tr>
+      <td>Football Insurance</td>
+      <td> <img src="tic.jpg" alt=""></td>
+      <td><img src="croos.png" alt=""></td>
+      <td><img src="tic.jpg" alt=""></td>
+    </tr>
+    <tr >
+      <td> Club facilities</td>
+      <td><img src="croos.png" alt=""></td>
+      <td><img src="tic.jpg" alt=""></td>
+      <td><img src="tic.jpg" alt=""></td>
+    </tr>
+    <tr>
+      <td> Country Club</td>
+      <td><img src="croos.png" alt=""></td>
+      <td><img src="croos.png" alt=""></td>
+      <td><img src="tic.jpg" alt=""></td>
+    </tr>
+    <tr >
+      <td > Weekend Seasonal</td>
+      <td><img src="croos.png" alt=""></td>
+      <td><img src="croos.png" alt=""></td>
+      <td><img src="tic.jpg" alt=""></td>
+    </tr>
+    <tr>
+      <td>Premium Courses</td>
+      <td><img src="tic.jpg" alt=""></td>
+      <td><img src="croos.png" alt=""></td>
+      <td><img src="tic.jpg" alt=""></td>
+    </tr>
+    <tr >
+      <td> Pro's Networking</td>
+      <td><img src="tic.jpg" alt=""></td>
+      <td><img src="tic.jpg" alt=""></td>
+      <td><img src="tic.jpg" alt=""></td>
+    </tr>
+    
+  </table>
+  </div>
+  <h4 style="font-size:x-large; bottom: 200px;">Please join us</h4>
+  <div class="type1">
+    <h2>Title</h2>
+  <input type="text" name="Name" id="" placeholder="Name"><br><br>
+  <input type="text" name=" Email" id="" placeholder="Email"><br><br>
+  <textarea name="Comments" id="" cols="25" rows="10" placeholder="Comments"></textarea>
+ <div> <button type="submit" class="form-control">Submit Form</button></div>
+  </div>      
+
+  
     </section>
     <section id="events">
       <h2> Upcoming events</h2>
@@ -214,7 +388,32 @@
     </section >
     <section id="contact us">
       <h2>Contact us</h2>
-      
+         <form action="#" method="post" class="custom-form contact-form" role="form">
+                                <h2 class="mb-4 pb-2">Contact Soocer</h2>
+
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-floating">
+                                            <input type="text" name="full-name" id="full-name" class="form-control" placeholder="Full Name" required="">
+                                              <label for="floatingInput">Full Name</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12"> 
+                                        <div class="form-floating">
+                                            <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required="">
+                                          <label for="floatingInput">Email address</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" id="message" name="message" placeholder="Describe message here"></textarea>
+                                            <label for="floatingTextarea">Message</label>
+                                        </div>
+                                        <button type="submit" class="form-control">Submit Form</button>
+                                    </div>
+                                </div>
+                            </form>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis voluptatem quasi dolores praesentium voluptas nihil recusandae quae, maiores explicabo doloremque unde quidem corrupti quas! Fuga eius nisi ex aperiam architecto.
       </p>
@@ -227,11 +426,24 @@
       <h3>Login to Football Club</h3>
       <input type="text" placeholder="Username" style="width: 100%; padding: 10px; margin: 10px 0;">
       <input type="password" placeholder="Password" style="width: 100%; padding: 10px; margin: 10px 0;">
-      <button onclick="login()" style="background-color: #ef233c; padding: 10px 15px; border-radius: 5px; width: 100%;">Login</button>
-      <button onclick="closeLogin()" style="background-color: #ddd; padding: 10px 15px; border-radius: 5px; width: 100%; margin-top: 10px;">Cancel</button>
+      <button onclick="login()" style="background-color: #ef233c; padding: 10px 15px; border-radius: 5px; width: 100%; cursor: pointer;">Login</button>
+      <button onclick="closeLogin()" style="background-color: #ddd; padding: 10px 15px; border-radius: 5px; width: 100%; margin-top: 10px; cursor: pointer;">Cancel</button>
     </div>
   </div>
+<script>
+function login() {
+  alert("Logged in!");
+  closeLogin();
+}
 
+function closeLogin() {
+  document.getElementById("loginModal").style.display = "none";
+}
+
+document.querySelector(".navbar ul li:last-child a").onclick = function() {
+  document.getElementById("loginModal").style.display = "block";
+}
+</script>
 
 
 </body>

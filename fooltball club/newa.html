@@ -3,68 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Football Club</title>
-    <!-- Add Bootstrap CSS link here -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Custom button styles */
-        .custom-btn {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
+    <title>Document</title>
+    <style>.type1 {
+  display: flex;
+  flex-direction: column;  /* This will make the items stack vertically */
+  width: 50%;
+  padding: 20px;  /* Optional, just to add some padding */
+}
 
-        .custom-border-btn {
-            border: 2px solid #007bff;
-        }
+.type1 input,
+.type1 textarea {
+  margin-bottom: 10px;  /* Adds spacing between form elements */
+  padding: 10px;
+  font-size: 16px;
+}
 
-        /* Button hover effect */
-        .custom-btn:hover, .custom-border-btn:hover {
-            background-color: #0056b3;
-            color: #ffffff;
-            text-decoration: none;
-        }
+.type1 button {
+  padding: 10px;
+  background-color: #ef233c;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
 
-        /* Offcanvas styling */
-        .offcanvas-body {
-            padding: 20px;
-        }
-    </style>
+.type1 button:hover {
+  background-color: blue;
+}
+
+.type1 button:active {
+  background-color: yellow;
+}
+</style>
 </head>
 <body>
+    <div class="type1">
+  <h2>Become a Member</h2>
+  <input type="text" name="Name" id="" placeholder="Name"><br><br>
+  <input type="text" name="Email" id="" placeholder="Email"><br><br>
+  <textarea name="Comments" id="" cols="25" rows="10" placeholder="Comments">Comments</textarea>
+  <button type="submit" class="form-control">Submit Form</button>
+</div>
 
-    <!-- Member Login Button -->
-    <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-        Member Login
-    </a>
-
-    <!-- Offcanvas (Modal) for Member Login -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-            <h5 id="offcanvasExampleLabel">Member Login</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <!-- Member Login Form (you can adjust this form as needed) -->
-            <form>
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter your username">
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter your password">
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Login</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Add Bootstrap JS and Popper.js for offcanvas functionality -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
